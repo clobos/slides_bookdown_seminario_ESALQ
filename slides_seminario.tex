@@ -1,0 +1,201 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usetheme[]{CambridgeUS}
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Primeiros passos para criação de livros usando o pacote bookdown do R},
+  pdfauthor={Cristian Villegas (clobos@usp.br)},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Primeiros passos para criação de livros usando o pacote bookdown
+do R}
+\author{Cristian Villegas
+(\href{mailto:clobos@usp.br}{\nolinkurl{clobos@usp.br}})}
+\date{03-05-2023}
+\institute{USP, Departamento de Ciências Exatas}
+
+\begin{document}
+\frame{\titlepage}
+
+\hypertarget{steps-for-publishing-your-own-bookdown-document}{%
+\section{13 steps for publishing your own bookdown
+document}\label{steps-for-publishing-your-own-bookdown-document}}
+
+\begin{frame}{13 steps for publishing your own bookdown document}
+\protect\hypertarget{steps-for-publishing-your-own-bookdown-document-1}{}
+\begin{itemize}
+\tightlist
+\item
+  Install bookdown R package: \textbf{install.packages(``bookdown'')}
+\item
+  Create a GitHub account \url{https://github.com/}
+\item
+  Signing up in your GitHub account
+\item
+  Create a new repository in your GitHub called
+  \textbf{my\_first\_bookdown}
+\item
+  Create a new project in RStudio and \textbf{Book project using
+  bookdown}
+\item
+  Modify the \_bookdown.yml file
+\item
+  Create the util.R file
+\item
+  Build your first bookdown (Ctrl + Shift + B)
+\item
+  Add your files in your Github \textbf{my\_first\_bookdown} folder
+\item
+  Click Settings, Pages, Branch, None (Main), /root (/docs) and Save
+\item
+  Click \textbf{my\_first\_bookdown}
+\item
+  Wait for the green ball to appear
+\item
+  Click \textbf{\url{https://username.github.io/my_first_bookdown}}
+\end{itemize}
+\end{frame}
+
+\hypertarget{modify-the-_bookdown.yml-file}{%
+\section{Modify the \_bookdown.yml
+file}\label{modify-the-_bookdown.yml-file}}
+
+\begin{frame}[fragile]{Modify the \_bookdown.yml file}
+\protect\hypertarget{modify-the-_bookdown.yml-file-1}{}
+\begin{verbatim}
+output_dir: docs
+delete_merged_file: true
+new_session: true
+
+language:
+  label:
+    fig: 'Figura '
+    tab: 'Tabela '
+
+ui:
+  chapter_name: 'Capítulo '
+  
+before_chapter_script: "util.R"
+
+book_filename: "PDF_seminario" 
+\end{verbatim}
+\end{frame}
+
+\hypertarget{add-the-util.r-file}{%
+\section{Add the util.R file}\label{add-the-util.r-file}}
+
+\begin{frame}[fragile]{Add the util.R file}
+\protect\hypertarget{add-the-util.r-file-1}{}
+\begin{verbatim}
+knitr::opts_chunk$set(message = FALSE, 
+                      warning = FALSE)
+\end{verbatim}
+\end{frame}
+
+\hypertarget{exercise}{%
+\section{Exercise}\label{exercise}}
+
+\begin{frame}{Exercise}
+\protect\hypertarget{exercise-1}{}
+\textbf{Modify everything in your new bookdown}
+\end{frame}
+
+\hypertarget{references}{%
+\section{References}\label{references}}
+
+\begin{frame}{References}
+\protect\hypertarget{references-1}{}
+\begin{itemize}
+\item
+  Xie, Yihui (2015). Dynamic Documents with R and Knitr. 2nd ed.~Boca
+  Raton, Florida: Chapman; Hall/CRC. \url{http://yihui.org/knitr/}.
+\item
+  Xie, Yihui (2023). Bookdown: Authoring Books and Technical Documents
+  with r Markdown. \url{https://CRAN.R-project.org/package=bookdown}.
+\end{itemize}
+\end{frame}
+
+\end{document}

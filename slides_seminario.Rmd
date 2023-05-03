@@ -1,0 +1,82 @@
+---
+title: "Primeiros passos para criação de livros usando o pacote bookdown do R"
+author: "Cristian Villegas (clobos@usp.br)"
+institute: "USP, Departamento de Ciências Exatas"
+date: "03-05-2023"
+output:
+  beamer_presentation: 
+    slide_level: 2
+    toc: no
+    theme: CambridgeUS
+    fig_caption: yes
+    highlight: zenburn
+    keep_tex: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 13 steps for publishing your own bookdown document
+
+## 13 steps for publishing your own bookdown document
+
+  - Install bookdown R package: __install.packages("bookdown")__
+  - Create a GitHub account [https://github.com/](https://github.com/)
+  - Signing up in your GitHub account
+  - Create a new repository in your GitHub called __my_first_bookdown__
+  - Create a new project in RStudio and __Book project using bookdown__
+  - Modify the _bookdown.yml file
+  - Create the util.R file
+  - Build your first bookdown  (Ctrl + Shift + B)
+  - Add your files in your Github __my_first_bookdown__ folder
+  - Click Settings, Pages, Branch, None (Main), /root (/docs) and Save
+  - Click __my_first_bookdown__
+  - Wait for the green ball to appear
+  - Click **https://username.github.io/my_first_bookdown**
+
+# Modify the _bookdown.yml file
+
+## Modify the _bookdown.yml file
+
+```
+output_dir: docs
+delete_merged_file: true
+new_session: true
+
+language:
+  label:
+    fig: 'Figura '
+    tab: 'Tabela '
+
+ui:
+  chapter_name: 'Capítulo '
+  
+before_chapter_script: "util.R"
+
+book_filename: "PDF_seminario" 
+```
+
+# Add the util.R file
+
+## Add the util.R file
+
+```
+knitr::opts_chunk$set(message = FALSE, 
+                      warning = FALSE)
+```
+
+
+# Exercise
+
+## Exercise
+
+__Modify everything in your new bookdown__
+
+# References
+
+## References
+
+  - Xie, Yihui (2015). Dynamic Documents with R and Knitr. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. http://yihui.org/knitr/.
+
+  - Xie, Yihui (2023). Bookdown: Authoring Books and Technical Documents with r Markdown. https://CRAN.R-project.org/package=bookdown.
