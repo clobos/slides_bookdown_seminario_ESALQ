@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## 13 steps for publishing your own bookdown document
 
-  - Install bookdown R package: __install.packages("bookdown")__
+  - Install bookdown R package (Yihui (2015, 2023)): __install.packages("bookdown")__
   - Create a GitHub account [https://github.com/](https://github.com/)
   - Signing up in your GitHub account
   - Create a new repository in your GitHub called __my_first_bookdown__
@@ -73,6 +73,15 @@ knitr::opts_chunk$set(message = FALSE,
 
 __Modify everything in your new bookdown__
 
+
+# More details 
+
+## More details
+
+  - [https://github.com/rstudio/bookdown-demo](https://github.com/rstudio/bookdown-demo)
+  - [https://bookdown.org/yihui/bookdown/](https://bookdown.org/yihui/bookdown/)
+  
+  
 # References
 
 ## References
