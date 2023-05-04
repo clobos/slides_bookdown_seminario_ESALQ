@@ -130,6 +130,21 @@ document}
 \begin{itemize}
 \tightlist
 \item
+  Create the util.R file with the following information
+\end{itemize}
+
+\begin{verbatim}
+knitr::opts_chunk$set(message = FALSE, 
+                      warning = FALSE)
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{13 steps for publishing your own bookdown
+document}
+\protect\hypertarget{steps-for-publishing-your-own-bookdown-document-3}{}
+\begin{itemize}
+\tightlist
+\item
   Modify the \_bookdown.yml file
 \end{itemize}
 
@@ -148,21 +163,6 @@ ui:
   
 before_chapter_script: "util.R"
 book_filename: "PDF_seminario" 
-\end{verbatim}
-\end{frame}
-
-\begin{frame}[fragile]{13 steps for publishing your own bookdown
-document}
-\protect\hypertarget{steps-for-publishing-your-own-bookdown-document-3}{}
-\begin{itemize}
-\tightlist
-\item
-  Create the util.R file with the following information
-\end{itemize}
-
-\begin{verbatim}
-knitr::opts_chunk$set(message = FALSE, 
-                      warning = FALSE)
 \end{verbatim}
 \end{frame}
 

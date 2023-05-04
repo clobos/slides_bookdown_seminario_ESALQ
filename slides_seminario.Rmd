@@ -26,7 +26,15 @@ knitr::opts_chunk$set(echo = TRUE)
   - Signing up in your GitHub account
   - Create a new repository in your GitHub called __my_first_bookdown__
   - Create a new project in RStudio and __Book project using bookdown__
-  
+
+## 13 steps for publishing your own bookdown document
+
+  - Create the util.R file with the following information
+```
+knitr::opts_chunk$set(message = FALSE, 
+                      warning = FALSE)
+```
+
 ## 13 steps for publishing your own bookdown document
 
   - Modify the _bookdown.yml file
@@ -45,14 +53,6 @@ ui:
   
 before_chapter_script: "util.R"
 book_filename: "PDF_seminario" 
-```
-
-## 13 steps for publishing your own bookdown document
-
-  - Create the util.R file with the following information
-```
-knitr::opts_chunk$set(message = FALSE, 
-                      warning = FALSE)
 ```
 
 ## 13 steps for publishing your own bookdown document
