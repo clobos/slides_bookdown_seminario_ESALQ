@@ -1,15 +1,13 @@
 ---
 title: "Primeiros passos para criação de livros usando o pacote bookdown do R"
-author: "Cristian  (clobos@usp.br)"
+author: "Cristian  Villegas (clobos@usp.br)"
 institute: "USP, Departamento de Ciências Exatas"
 date: "03-05-2023"
 output:
   beamer_presentation: 
     slide_level: 2
-    toc: no
     theme: CambridgeUS
     fig_caption: yes
-    highlight: zenburn
     keep_tex: yes
 ---
 
