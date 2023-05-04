@@ -26,19 +26,10 @@ knitr::opts_chunk$set(echo = TRUE)
   - Signing up in your GitHub account
   - Create a new repository in your GitHub called __my_first_bookdown__
   - Create a new project in RStudio and __Book project using bookdown__
+  
+## 13 steps for publishing your own bookdown document
+
   - Modify the _bookdown.yml file
-  - Create the util.R file
-  - Build your first bookdown  (Ctrl + Shift + B)
-  - Add your files in your Github __my_first_bookdown__ folder
-  - Click Settings, Pages, Branch, None (Main), /root (/docs) and Save
-  - Click __my_first_bookdown__
-  - Wait for the green ball to appear
-  - Click **https://username.github.io/my_first_bookdown**
-
-# Modify the _bookdown.yml file
-
-## Modify the _bookdown.yml file
-
 ```
 output_dir: docs
 delete_merged_file: true
@@ -53,18 +44,25 @@ ui:
   chapter_name: 'Capítulo '
   
 before_chapter_script: "util.R"
-
 book_filename: "PDF_seminario" 
 ```
 
-# Add the util.R file
+## 13 steps for publishing your own bookdown document
 
-## Add the util.R file
-
+  - Create the util.R file with the following information
 ```
 knitr::opts_chunk$set(message = FALSE, 
                       warning = FALSE)
 ```
+
+## 13 steps for publishing your own bookdown document
+
+  - Build your first bookdown  (Ctrl + Shift + B)
+  - Add your files in your Github __my_first_bookdown__ folder
+  - Click Settings, Pages, Branch, None (Main), /root (/docs) and Save
+  - Click __my_first_bookdown__
+  - Wait for the green ball to appear
+  - Click **https://username.github.io/my_first_bookdown**
 
 
 # Exercise

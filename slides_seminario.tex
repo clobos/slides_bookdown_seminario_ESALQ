@@ -121,31 +121,18 @@ document}\label{steps-for-publishing-your-own-bookdown-document}}
 \item
   Create a new project in RStudio and \textbf{Book project using
   bookdown}
-\item
-  Modify the \_bookdown.yml file
-\item
-  Create the util.R file
-\item
-  Build your first bookdown (Ctrl + Shift + B)
-\item
-  Add your files in your Github \textbf{my\_first\_bookdown} folder
-\item
-  Click Settings, Pages, Branch, None (Main), /root (/docs) and Save
-\item
-  Click \textbf{my\_first\_bookdown}
-\item
-  Wait for the green ball to appear
-\item
-  Click \textbf{\url{https://username.github.io/my_first_bookdown}}
 \end{itemize}
 \end{frame}
 
-\hypertarget{modify-the-_bookdown.yml-file}{%
-\section{Modify the \_bookdown.yml
-file}\label{modify-the-_bookdown.yml-file}}
+\begin{frame}[fragile]{13 steps for publishing your own bookdown
+document}
+\protect\hypertarget{steps-for-publishing-your-own-bookdown-document-2}{}
+\begin{itemize}
+\tightlist
+\item
+  Modify the \_bookdown.yml file
+\end{itemize}
 
-\begin{frame}[fragile]{Modify the \_bookdown.yml file}
-\protect\hypertarget{modify-the-_bookdown.yml-file-1}{}
 \begin{verbatim}
 output_dir: docs
 delete_merged_file: true
@@ -160,20 +147,42 @@ ui:
   chapter_name: 'Capítulo '
   
 before_chapter_script: "util.R"
-
 book_filename: "PDF_seminario" 
 \end{verbatim}
 \end{frame}
 
-\hypertarget{add-the-util.r-file}{%
-\section{Add the util.R file}\label{add-the-util.r-file}}
+\begin{frame}[fragile]{13 steps for publishing your own bookdown
+document}
+\protect\hypertarget{steps-for-publishing-your-own-bookdown-document-3}{}
+\begin{itemize}
+\tightlist
+\item
+  Create the util.R file with the following information
+\end{itemize}
 
-\begin{frame}[fragile]{Add the util.R file}
-\protect\hypertarget{add-the-util.r-file-1}{}
 \begin{verbatim}
 knitr::opts_chunk$set(message = FALSE, 
                       warning = FALSE)
 \end{verbatim}
+\end{frame}
+
+\begin{frame}{13 steps for publishing your own bookdown document}
+\protect\hypertarget{steps-for-publishing-your-own-bookdown-document-4}{}
+\begin{itemize}
+\tightlist
+\item
+  Build your first bookdown (Ctrl + Shift + B)
+\item
+  Add your files in your Github \textbf{my\_first\_bookdown} folder
+\item
+  Click Settings, Pages, Branch, None (Main), /root (/docs) and Save
+\item
+  Click \textbf{my\_first\_bookdown}
+\item
+  Wait for the green ball to appear
+\item
+  Click \textbf{\url{https://username.github.io/my_first_bookdown}}
+\end{itemize}
 \end{frame}
 
 \hypertarget{exercise}{%
